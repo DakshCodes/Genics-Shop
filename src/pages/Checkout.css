@@ -1,0 +1,116 @@
+@font-face {
+    font-family: densei;
+    src: url('../assets/dense.otf');
+}
+
+@font-face {
+    font-family: think;
+    src: url('../assets/Think-Bold.ttf');
+}
+
+@font-face {
+    font-family: corbal;
+    src: url('../assets/Corbel.ttf');
+}
+
+@font-face {
+    font-family: flexing;
+    src: url('../assets/FelixTitling.ttf');
+}
+
+.checkout-main {
+    height: calc(100vh - 150px);
+    width: 100%;
+    display: flex;
+}
+
+.chekout-content-1 {
+    background-color: #fff;
+    height: 100%;
+    display: flex;
+    /* border-radius: 20px; */
+    width: 60%;
+    display: flex;
+    padding: 30px;
+    flex-direction: column;
+}
+
+.chekout-content-1 .checkout-1-head {
+    height: 20%;
+    /* border-radius: 20px; */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout-1-head img {
+    width: 60px;
+    margin-bottom: 0.2vw;
+}
+
+.checkout-1-head h1 {
+    font-family: flexing;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 1.8vw;
+    letter-spacing: 1px;
+    margin-bottom: 0.2vw;
+    color: #000;
+}
+
+.checkout-1-head p {
+    color: rgb(189, 189, 188);
+    font-size: 1.2vw;
+    text-align: center;
+    font-family: corbal;
+}
+
+.chekout-content-1 .checkout-1-items {
+    height: 70vh;
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 1vw;
+    padding-left: 5vw;
+    position: relative;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+
+.chekout-content-1 .checkout-1-items::-webkit-scrollbar {
+    width: 5px;
+    /* width of the entire scrollbar */
+}
+
+.chekout-content-1 .checkout-1-items::-webkit-scrollbar-track {
+    background: rgb(177, 139, 189);
+    /* background: #000; */
+    /* color of the tracking area */
+}
+
+.chekout-content-1 .checkout-1-items::-webkit-scrollbar-thumb {
+    background-color: #000e;
+    /* background-color:rgb(177, 139, 189); */
+    /* color of the scroll thumb */
+    border-radius: 10px;
+    /* roundness of the scroll thumb 
+    /* creates padding around scroll thumb */
+}
+
+.chekout-content-2 {
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    /* border-radius: 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+
+/* checkout css */

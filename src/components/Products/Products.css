@@ -1,0 +1,148 @@
+@font-face {
+    font-family: densei;
+    src: url('../../assets/dense.otf');
+}
+
+@font-face {
+    font-family: think;
+    src: url('../../assets/Think-Bold.ttf');
+}
+
+@font-face {
+    font-family: corbal;
+    src: url('../../assets/Corbel.ttf');
+}
+
+@font-face {
+    font-family: flexing;
+    src: url('../../assets/FelixTitling.ttf');
+}
+
+@font-face {
+    font-family: against;
+    src: url('../../assets/against.otf');
+}
+
+.product-main {
+    height: 100vh;
+    width: 100%;
+}
+
+.product-content {
+    background-color: #fff;
+    height: 100%;
+    margin: 0 6vw;
+    padding-top:3vw;
+    overflow: hidden;
+}
+
+.head-product {
+    height: 130px;
+    padding: 0 2.3vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.head-product span {
+    text-transform: uppercase;
+    font-family: flexing;
+    font-weight: 900;
+    font-size: 2.8vw;
+    letter-spacing: 2px;
+}
+
+.head-product .catgories {
+    display: flex;
+    padding: 10px 0px;
+}
+
+.catgories .type {
+    /* font-family: corbal; */
+    /* font-family: flexing; */
+    font-family: against;
+    font-weight: 900;
+    font-size: 1.1vw;
+    margin: 0 5px;
+    border-radius: 18px;
+    color: #000000;
+    cursor: pointer;
+    padding: 7px 20px;
+    border: 1px solid #000000;
+    transition: all 0.4s ease;
+}
+
+
+.catgories .type:hover {
+    background-color: #000000;
+    color: #fff;
+}
+
+.card-product {
+    display: flex;
+    justify-content: center;
+    gap: 7vw;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 2vw;
+    margin-left: 2.5vw;
+    height: 60vh;
+    position: relative;
+    overflow-y: auto;
+}
+
+.card-product::-webkit-scrollbar{
+    display: none;
+}
+
+
+
+
+.products1-content {
+    top: 49%;
+    position: absolute;
+    text-align: center;
+    overflow: hidden;
+    width: 88%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6vw;
+
+}
+
+.products1-content .home2-content-text {
+    font-family: against;
+    letter-spacing: 1px;
+    font-size: 2vw;
+
+    margin-top: 5vw;
+    line-height: 70px;
+}
+
+.parallax {
+    overflow: hidden;
+    letter-spacing: -2px;
+    line-height: 0.8;
+    margin: 0;
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.parallax .scroller {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 80px;
+    display: flex;
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.parallax span {
+    color: #000000;
+    opacity: 0.5;
+    font-family: against;
+    display: block;
+    margin-right: 30px;
+}

@@ -1,11 +1,69 @@
-.main-home-2{
-    height: 100vh;
+@font-face {
+    font-family: densei;
+    src: url('../../assets/dense.otf');
+}
+
+@font-face {
+    font-family: think;
+    src: url('../../assets/Think-Bold.ttf');
+}
+
+@font-face {
+    font-family: corbal;
+    src: url('../../assets/Corbel.ttf');
+}
+
+@font-face {
+    font-family: flexing;
+    src: url('../../assets/FelixTitling.ttf');
+}
+
+@font-face {
+    font-family: against;
+    src: url('../../assets/against.otf');
+}
+
+.main-home-2 {
+    height: 60vh;
     width: 100%;
 }
-.home-2-content{
-    background-color: #000000;
+
+.home-2-content {
+    background-color: #fff;
     height: 100%;
     margin: 0 6vw;
+    padding: 0 2vw;
     display: flex;
+}
+
+.home-content h1 {
+    font-family: against;
+    letter-spacing: 2px;
+    font-size: 2vw;
+    margin-top: 8vw;
+    line-height: 60px;
+    display: inline-block !important;
+}
+
+.tshirt {
+    width: 100px;
+    display: inline-block !important;
+    height: 120px;
+    margin: 0 20px;
+}
+
+.tshirt img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size: cover;
+    /* border-radius: 16px; */
+    /* mix-blend-mode:saturation ; */
+}
+
+.all-collection {
+    color: rgb(177, 139, 189);
+    border: 1px solid black;
     border-radius: 20px;
+    padding: 4px 8px;
 }

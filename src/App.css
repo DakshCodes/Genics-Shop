@@ -2,6 +2,9 @@
   font-family: dense;
   src: url('./assets/dense.otf');
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   margin: 0;
@@ -9,4 +12,8 @@
   box-sizing: border-box;
   /* font-family: dense; */
   /* overflow: hidden; */
+}
+body{
+  background-color: #DEDEDE;
+  cursor: none;
 }

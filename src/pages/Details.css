@@ -1,0 +1,240 @@
+@font-face {
+    font-family: densei;
+    src: url('../assets/dense.otf');
+}
+
+@font-face {
+    font-family: think;
+    src: url('../assets/Think-Bold.ttf');
+}
+
+@font-face {
+    font-family: corbal;
+    src: url('../assets/Corbel.ttf');
+}
+
+@font-face {
+    font-family: flexing;
+    src: url('../assets/FelixTitling.ttf');
+}
+
+@font-face {
+    font-family: Giloy;
+    src: url('../assets/Gilroy.otf');
+}
+
+
+.Detail-main {
+    height: calc(280vh - 150px);
+    width: 100%;
+    background-color: #fff;
+}
+
+.detail-content {
+    overflow: hidden;
+    height: 40%;
+    margin: 0 6vw;
+    display: flex;
+}
+
+#content {
+    overflow: hidden;
+    font-family: gilroy;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+}
+
+#left {
+    width: 28%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#right {
+    width: 30%;
+    height: 100%;
+    padding: 330px 130px;
+}
+
+#center {
+    position: relative;
+    width: 40%;
+    height: 100vh;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#left h1 {
+    font-family: Giloy;
+    font-size: 80px;
+    line-height: 80px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+#left h1 span {
+    color: red;
+    font-weight: 500;
+}
+
+#left h2 {
+    font-family: against;
+    font-size: 30px;
+    line-height: 80px;
+    font-weight: 900;
+    opacity: 0.8;
+    margin-bottom: 40px;
+}
+
+#left p {
+    font-family: corbal;
+    margin-bottom: 50px;
+    font-size: 18px;
+    width: 60%;
+    line-height: 17px;
+    opacity: 0.6;
+}
+
+#left button {
+    cursor: pointer;
+    /* font-family: Giloy; */
+    background-color: #000;
+    width: 200px;
+    padding: 15px 38px;
+    border-radius: 40px;
+    font-size: 18px;
+    display: flex;
+    outline: none;
+    border: none;
+    align-items: center;
+    font-weight: 600;
+    color: #fff;
+}
+
+#left button i {
+    font-weight: 100;
+    margin-right: 10px;
+}
+
+#center-bg {
+    position: relative;
+    width: 60vw;
+    margin-left: 4vw;
+    height: 35vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 1000px;
+    border-top-left-radius: 1000px;
+    border-top-right-radius: 1000px;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(152, 172, 209, 1) 26%, rgba(155, 156, 158, 1) 100%);
+}
+
+#center-bg .img{
+  height: 600px;
+  width: 400px;
+  overflow: hidden;
+}
+
+#content #center img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    z-index: 99;
+    /* animation: updown 700ms infinite alternate-reverse ease-in; */
+}
+
+@keyframes updown {
+    to {
+        top: -19.4%;
+    }
+}
+
+#right-elems {
+    width: 350px;
+}
+
+#elem1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    opacity: 0.6;
+    border-bottom: 1px solid #fff;
+}
+
+#elem1 h1 {
+    font-size: 24px;
+    font-family: Giloy;
+    font-weight: 600;
+}
+
+#elem1 i {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#elem2 h1 {
+    font-family: Giloy;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-top: 15px;
+}
+
+#elem2 p {
+    font-size: 12px;
+    font-family: corbal;
+    width: 80%;
+    opacity: 0.6;
+}
+
+
+/* detail.content 2 */
+.detail-content-2 {
+    height: 50%;
+    overflow: hidden;
+    background: #fff;
+}
+
+
+.detail-content-1 {
+    height: 100%;
+    margin: 0 6vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detail-content-1 h1 {
+    height: 10%;
+    text-align: center;
+    color: rgb(177, 139, 189);
+    font-family: flexing;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 3vw;
+}
+
+.detail-content-1 div {
+    height: 60%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.detail-content-1 div video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}

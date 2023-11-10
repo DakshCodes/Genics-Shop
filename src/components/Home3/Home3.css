@@ -1,0 +1,133 @@
+@font-face {
+  font-family: densei;
+  src: url('../../assets/dense.otf');
+}
+
+@font-face {
+  font-family: think;
+  src: url('../../assets/Think-Bold.ttf');
+}
+
+@font-face {
+  font-family: corbal;
+  src: url('../../assets/Corbel.ttf');
+}
+
+@font-face {
+  font-family: flexing;
+  src: url('../../assets/FelixTitling.ttf');
+}
+
+@font-face {
+  font-family: against;
+  src: url('../../assets/against.otf');
+}
+
+.Home3-main {
+  height: 70vh;
+  width: 100%;
+}
+
+.home-3-content {
+  background-color: #fff;
+  height: 100%;
+  margin: 0 6vw;
+  overflow: hidden;
+}
+
+.head-home3 {
+  height: 100%;
+  padding: 0 2vw;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  border: 1px solid;
+  align-items: center;
+  justify-content: space-between;
+  background-image: url(https://images.unsplash.com/photo-1696550580343-4f339143b465?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1856&q=80);
+  background-size: cover;
+}
+
+
+.head-home3 span {
+  text-transform: uppercase;
+  font-family: flexing;
+  font-weight: 900;
+  font-size: 2.5vw;
+  letter-spacing: 2px;
+}
+
+.head-home3 .catgories {
+  display: flex;
+  padding: 10px 0px;
+}
+
+.catgories .type {
+  /* font-family: corbal; */
+  /* font-family: flexing; */
+  font-family: against;
+  font-weight: 900;
+  font-size: 1.1vw;
+  margin: 0 5px;
+  border-radius: 18px;
+  color: #000000;
+  cursor: pointer;
+  padding: 7px 20px;
+  border: 1px solid #000000;
+  transition: all 0.4s ease;
+}
+
+
+.catgories .type:hover {
+  background-color: #000000;
+  color: #fff;
+}
+
+
+
+.home3-content {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+
+}
+
+.home2-content-text {
+  font-family: against;
+  letter-spacing: 1px;
+  font-size: 2vw;
+
+  margin-top: 5vw;
+  line-height: 70px;
+}
+
+.parallax {
+  overflow: hidden;
+  letter-spacing: -2px;
+  line-height: 0.8;
+  margin: 0;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.parallax .scroller {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 80px;
+  display: flex;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.parallax span {
+  color: #000000;
+  opacity: 0.5;
+  font-family: against;
+  display: block;
+  margin-right: 30px;
+}
