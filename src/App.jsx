@@ -27,16 +27,14 @@ import Search from './pages/Search/Search'
 function App() {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <Routes>
         {/* <Route exact path='/' element={<Private />} > */}
         <Route exact path='/' element={<Home />} />
         <Route exact path='/checkout' element={<Checkout />} />
         <Route exact path='/search' element={<Search />} />
         <Route exact path='/detail/:slug' element={<Details />} />
-        <Route exact path='/allproducts/men' element={<Products />} />
-        <Route exact path='/allproducts/women' element={<Products />} />
-        <Route exact path='/allproducts/accessories' element={<Products />} />
+        <Route exact path='/allproducts' element={<Products />} />
         {/* </Route> */}
         <Route exact path='/dashboard' element={<Private />} >
           <Route exact path='user' element={<DashBoard />} />

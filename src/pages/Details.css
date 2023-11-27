@@ -25,7 +25,7 @@
 
 
 .Detail-main {
-    height: calc(280vh - 150px);
+    height: max-content;
     width: 100%;
     background-color: #fff;
 }
@@ -40,42 +40,79 @@
 #content {
     overflow: hidden;
     font-family: gilroy;
-    height: 100%;
+    height: max-content;
     width: 100%;
     display: flex;
     justify-content: flex-start;
     position: relative;
+    flex-wrap: wrap;
     overflow: hidden;
+    padding: 30px 0px;
 }
 
 #left {
+    margin: auto;
+    flex-grow: 1;
     width: 28%;
-    height: 80%;
+    height: max-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 #right {
+    margin: auto;
+    flex-grow: 1;
     width: 30%;
-    height: 100%;
-    padding: 330px 130px;
+    height: max-content !important;
+    padding: 0px 50px;
 }
 
+
 #center {
+    margin: auto;
+    flex-grow: 1;
     position: relative;
-    width: 40%;
-    height: 100vh;
-    padding-top: 100px;
+    width: 30rem;
+    height: max-content;
     display: flex;
     justify-content: center;
     overflow: hidden;
 }
 
+@media (max-width:500px) {
+    
+#left h1 {
+  text-align: center;
+  font-size: 8vmax;
+  line-height: 8vmax;
+}
+
+#left h2 {
+    text-align: center;
+}
+
+
+#left p {
+    text-align: center;
+}
+
+
+#left button {
+    margin: 0 auto;
+}
+
+#center-bg {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    height: 35vmax !important;
+}
+}
+
 #left h1 {
     font-family: Giloy;
-    font-size: 80px;
-    line-height: 80px;
+    font-size: 5vmax;
+    line-height: 4vmax;
     font-weight: 900;
     margin-bottom: 20px;
 }
@@ -86,19 +123,19 @@
 }
 
 #left h2 {
-    font-family: against;
+    font-family: flexing;
     font-size: 30px;
-    line-height: 80px;
+    line-height: 6vmax;
     font-weight: 900;
     opacity: 0.8;
     margin-bottom: 40px;
 }
 
 #left p {
-    font-family: corbal;
+    font-family: roundo;
     margin-bottom: 50px;
     font-size: 18px;
-    width: 60%;
+    width: 100%;
     line-height: 17px;
     opacity: 0.6;
 }
@@ -224,7 +261,7 @@
     font-family: flexing;
     text-transform: uppercase;
     font-weight: 900;
-    font-size: 3vw;
+    font-size: 3vmax;
 }
 
 .detail-content-1 div {

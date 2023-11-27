@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Animation } from '../animations/Animation';
 import './Details.css'
 import png from '../assets/myp.png'
 import video from '../assets/video2.mp4'
@@ -38,7 +37,6 @@ const Details = () => {
     useEffect(() => {
         getSingleProduct();
         //eslint-disable-next-line
-        Animation();
     }, []);
 
     // console.log(relatedProducts,"Related")
@@ -52,7 +50,7 @@ const Details = () => {
                             <h1>{detail?.name}</h1>
                             <h2>€{detail?.price}</h2>
                             <p>{detail?.description}</p>
-                            <button><i class="ri-shopping-bag-3-line"></i>Drink Now</button>
+                            <button><i class="ri-shopping-bag-3-line"></i>Add Cart</button>
                         </div>
                         <div id="center">
                             <div id="center-bg">
@@ -68,11 +66,11 @@ const Details = () => {
                                     <i class="ri-add-fill"></i>
                                 </div>
                                 <div id="elem1">
-                                    <h1>Nutrients</h1>
+                                    <h1>Quality</h1>
                                     <i class="ri-add-fill"></i>
                                 </div>
                                 <div id="elem1">
-                                    <h1>Ingredients</h1>
+                                    <h1>Details</h1>
                                     <i class="ri-add-fill"></i>
                                 </div>
                             </div>

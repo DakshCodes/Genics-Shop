@@ -27,11 +27,11 @@ const AllProducts = () => {
 
 
   return (
-    <div>
-      <div className='w-[80rem] flex justify-center items-center'>
-        <h1 className=' text-[#000] flex justify-center items-center text-5xl'>Products</h1>
+    <div className=''>
+      <div className='w-full mt-10 flex justify-center items-center'>
+        <h1 className=' text-[#000] !text-center flex justify-center items-center text-5xl'>Products</h1>
       </div>
-      <div className="p-20 flex flex-wrap">
+      <div className="p-20 flex gap-10 flex-wrap">
         {products?.map((p) => (
           <Productcard link={`/dashboard/admin/product/${p?.slug}`} key={p._id} p={p} />
         ))}

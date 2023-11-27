@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { Animation } from '../../animations/Animation';
 import './Home3.css'
 import { useRef } from "react";
 import {
@@ -61,9 +60,7 @@ const Home3 = () => {
     // TextAnimation.js
     const text = "Shop Genics";
     const text2 = " Where shopping meets genetics - Your one-stop destination for tailored trends and  personalized style. Unleash your unique shopping DNA with ShopGenics.This quote combines the idea of personalized shopping and a wide range of products";
-    useEffect(() => {
-        Animation();
-    }, [])
+
     return (
         <div className='Home3-main'>
             <div className="home-3-content">

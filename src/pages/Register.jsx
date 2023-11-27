@@ -1,18 +1,21 @@
 import React, { useState } from 'react'
 import './Register.css'
-import winter from '../assets/winter.png'
-import winter2 from '../assets/winter-2.jpg'
 import { Link, useNavigate } from 'react-router-dom'
 import toast from "react-hot-toast";
 import axios from 'axios'
+import { useAuth } from '../context/auth'
 
 const Register = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [auth, setAuth] = useAuth();
 
     const navigate = useNavigate();
 
+    if (auth.user) {
+        navigate('/')
+    }
 
     const handleregister = async (e) => {
         e.preventDefault();

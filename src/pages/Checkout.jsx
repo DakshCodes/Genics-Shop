@@ -81,7 +81,7 @@ const Checkout = () => {
                                 <>
                                     <div className="mt-8">
                                         <div className="flow-root">
-                                            <ul role="list" className="-my-6 divide-y divide-gray-200">
+                                            <ul role="list" className="my-6 divide-y  divide-gray-200">
                                                 <Card link={`/detail/${p?.slug}`} key={p._id} p={p} />
                                             </ul>
                                         </div>

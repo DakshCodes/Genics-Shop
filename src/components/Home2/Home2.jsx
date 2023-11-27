@@ -1,11 +1,7 @@
 import React, { useEffect } from 'react'
-import { Animation } from '../../animations/Animation';
 import './Home2.css'
 
 const Home2 = () => {
-  useEffect(() => {
-    Animation();
-  }, [])
   return (
     <div className='main-home-2'>
       <div className="home-2-content">

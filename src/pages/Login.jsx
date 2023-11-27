@@ -16,10 +16,10 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    useEffect(() => {
-        toast.error("Please Login");
-    }, [navigate])
-
+    if (auth.user){
+        navigate('/')
+    }
+ 
     // form function
     const handlelogin = async (e) => {
         e.preventDefault();

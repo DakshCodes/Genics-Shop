@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Animation } from '../../animations/Animation';
 import './Navbar.css';
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/auth';
@@ -8,6 +7,7 @@ import toast from 'react-hot-toast';
 import { motion } from "framer-motion"
 import { useSearch } from '../../context/search';
 import axios from 'axios';
+import logo from '../../assets/logo.jpg';
 
 
 const Navbar = () => {
@@ -57,6 +57,10 @@ const Navbar = () => {
         localStorage.removeItem("auth");
         toast.success("Logout Successfully");
     }
+    const handleseller = () => {
+        toast.success("After Admin Approval You Can Sell");
+    }
+
 
     useEffect(() => {
         const cursorDot = cursorDotRef.current;
@@ -71,10 +75,6 @@ const Navbar = () => {
         }
     }, [cursorPosition]);
 
-    useEffect(() => {
-        Animation();
-    }, []);
-
 
     // console.log(auth?.user?.role)
     return (<>
@@ -82,32 +82,20 @@ const Navbar = () => {
             <div className="cursor-dot" ref={cursorDotRef}></div>
             <div className="cursor-outline" ref={cursorOutlineRef}></div>
             <div className="lable-nav">
-                <span className='line'></span>
                 <span className='lable-text'>Free Shipping in India</span>
-                <span className='line'></span>
             </div>
             <div className="menu-nav">
                 <div className="content">
                     <div className="logo">
                         <Link to={'/'}>
-                            GS
+                            <img className='!h-[80px] md:!h-[120px]' src={logo} alt="" />
                         </Link>
                     </div>
-                    <div className="menu-links !z-[3]">
+                    <div className="menu-links !z-[3] !hidden md:!block ">
                         <ul>
-                            <Link to={"/allproducts/men"}>
+                            <Link to={"/allproducts"}>
                                 <li>
-                                    <a href="#">Men</a>
-                                </li>
-                            </Link>
-                            <Link to={"/allproducts/women"}>
-                                <li>
-                                    <a href="#">Women</a>
-                                </li>
-                            </Link>
-                            <Link to={"/allproducts/accessories"}>
-                                <li>
-                                    <a href="#">accessories</a>
+                                    <a href="#">Products</a>
                                 </li>
                             </Link>
                             <Link to={"/contact"}>
@@ -123,32 +111,48 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="icons-nav">
-                        <button class="tooltip">
-                            <Link
-                                to={`/dashboard/${auth?.user?.role === 1 ? "admin" : "user"
-                                    }`}
-                            ><i id='icon' class="ri-user-3-line"></i>
-                                <span class="tooltiptext">DashBoard</span>
-                            </Link>
-                        </button>
-                        <button class="tooltip2 relative">
+                        {
+                            auth?.user?.role === 1 && (
+                                <button class="tooltip">
+                                    <Link
+                                        to={`/dashboard/${auth?.user?.role === 1 ? "admin" : "user"
+                                            }`} >
+                                        <i id='icon' class="ri-user-3-line"></i>
+                                        <span>DashBoard</span>
+                                    </Link>
+                                </button>
+                            )
+
+                        }
+                        {
+                            auth?.user?.role === 0 && (
+                                <button class="tooltip" onClick={handleseller}>
+                                    <Link>
+                                        <i id='icon' class="ri-user-3-line"></i>
+                                        <span>Seller</span>
+                                    </Link>
+                                </button>
+                            )
+
+                        }
+
+                        <button class="tooltip relative">
                             <Link to={'/checkout'}>
                                 <i id='cart' class="ri-shopping-bag-line"></i>
-                                <span class="tooltiptext2">Cart</span>
+                                <span>Cart</span>
                                 <span className='absolute'>{cart?.length}</span>
                             </Link>
                         </button>
                         {
                             auth.user ? (
                                 <button class="Btn" title='LogOut' onClick={handleLogout}>
-                                    <div class="sign" title='LogOut'><svg title='LogOut' viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+                                    <div class="sign" title='LogOut'>
+                                        <svg title='LogOut' viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg>
+                                    </div>
                                 </button>
                             ) : (
                                 <Link to={'/login'} class="cta">
                                     <span class="hover-underline-animation">Login</span>
-                                    <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
-                                        <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
-                                    </svg>
                                 </Link>
                             )
                         }
@@ -156,7 +160,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-            <div className="z-[1] h-[4rem] flex flex-col justify-center">
+            {/* <div className="z-[1] h-[4rem] flex flex-col justify-center">
                 <div className="relative  p-16 w-full sm:max-w-xl sm:mx-auto">
                     <motion.div
                         initial={{ y: -30, opacity: 0 }}
@@ -178,7 +182,7 @@ const Navbar = () => {
                         <div className="glow glow-4 z-40 bg-blue-400 absolute" />
                     </motion.div>
                 </div>
-            </div>
+            </div> */}
         </div>
 
     </>

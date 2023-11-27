@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { Animation } from '../../animations/Animation';
 import './Products.css'
 import { useRef } from "react";
 import {
@@ -151,22 +150,19 @@ const Products = () => {
         if (checked.length) FilterProduct();
         console.log(products, "filter")
     }, [checked]);
-    useEffect(() => {
-        Animation();
-    }, []);
 
 
     const [products1, Setproducts] = useState([1, 2, 3, , 4]);
     // TextAnimation.js
-    const text = "SHop By Essentials";
+    const text = "Products";
     const text2 = " Where shopping meets genetics - Your one-stop destination for tailored trends and  personalized style. Unleash your unique shopping DNA with ShopGenics.This quote combines the idea of personalized shopping and a wide range of products";
 
     return (
         <div className='product-main'>
             <div className="product-content">
                 <div className="head-product">
-                    <motion.div>
-                        {text.split("").map((letter, index) => (
+                    <motion.div className='text-center'>
+                        {text.split(" ").map((letter, index) => (
                             <motion.span
                                 key={index}
                                 initial={{ opacity: 0 }}
@@ -185,14 +181,6 @@ const Products = () => {
                             })
                         }
                     </div>
-                </div>
-                <div className="products1-content">
-                    <ParallaxText baseVelocity={5}>Genics SHop</ParallaxText>
-                    <ParallaxText baseVelocity={-5}>Genics SHop</ParallaxText>
-                    <ParallaxText baseVelocity={5}>Genics SHop</ParallaxText>
-                    <ParallaxText baseVelocity={-5}>Genics SHop</ParallaxText>
-                    <ParallaxText baseVelocity={5}>Genics SHop</ParallaxText>
-                    <ParallaxText baseVelocity={-5}>Genics SHop</ParallaxText>
                 </div>
                 <div className="card-product">
 

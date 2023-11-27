@@ -38,8 +38,6 @@ const Productcard = ({ p, link }) => {
                         </button>
                     </div>
                 </div>
-                <div class={`card2 flex justify-center items-center`} id="c2">Genics</div>
-                <div class={`card2 flex justify-center items-center`} id="c4">Shop</div>
             </motion.div>
         </>
     )

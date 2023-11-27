@@ -3,9 +3,9 @@ import { Link, Outlet } from 'react-router-dom'
 
 const AdminDashBoard = () => {
   return (
-    <div className='flex h-[30rem] overflow-y-auto'>
-      <div className='w-[20rem] '>
-        <div class="flex flex-wrap bg-gray-100 w-full h-full">
+    <div className='flex h-[max-content] w-full overflow-y-auto relative flex-col justify-center items-center md:flex-row'>
+      <div className='w-[max-content] flex-grow-[1]'>
+        <div class="flex flex-wrap  bg-gray-100  h-[30rem]">
           <div class="w-[20rem] bg-white rounded p-5 shadow-lg">
             <div class="flex items-center space-x-4 p-10 mb-10">
               <img class="h-16 rounded-full" src="http://www.gravatar.com/avatar/2acfb745ecf9d4dccb3364752d17f65f?s=260&d=mp" alt="James Bhatta" />
@@ -14,7 +14,7 @@ const AdminDashBoard = () => {
                 <span class="text-sm tracking-wide flex items-center space-x-1">
                   <svg class="h-5 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg><span class="text-[#000] text-sm">Admin</span>
+                  </svg><span class="text-[#000] text-sm">Seller</span>
                 </span>
               </div>
             </div>
@@ -47,21 +47,11 @@ const AdminDashBoard = () => {
                   <span>Products</span>
                 </Link>
               </li>
-              <li>
-                <Link to="users" class="flex items-center space-x-3 text-[#000] p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline">
-                  <span class="text-[#000]">
-                    <svg class="h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
-                  </span>
-                  <span>Users</span>
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
       </div>
-      <Outlet />
+      <Outlet  />
     </div>
   )
 }

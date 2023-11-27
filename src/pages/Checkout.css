@@ -22,21 +22,22 @@
     height: calc(100vh - 150px);
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .chekout-content-1 {
+    flex-grow: 1;
     background-color: #fff;
-    height: 100%;
+    height: max-content;
     display: flex;
+    width: 30vmax;
+    overflow: hidden;
     /* border-radius: 20px; */
-    width: 60%;
-    display: flex;
-    padding: 30px;
     flex-direction: column;
 }
 
 .chekout-content-1 .checkout-1-head {
-    height: 20%;
+    height: max-content;
     /* border-radius: 20px; */
     color: #fff;
     display: flex;
@@ -54,23 +55,22 @@
     font-family: flexing;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 900;
-    font-size: 1.8vw;
+    font-size: 1.8rem;
     letter-spacing: 1px;
-    margin-bottom: 0.2vw;
     color: #000;
 }
 
 .checkout-1-head p {
     color: rgb(189, 189, 188);
-    font-size: 1.2vw;
+    font-size: 1.2rem;
     text-align: center;
     font-family: corbal;
 }
 
 .chekout-content-1 .checkout-1-items {
-    height: 70vh;
+    height: 20rem;
+    width: 50vmax;
     display: flex;
-
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
@@ -79,6 +79,7 @@
     position: relative;
     overflow: scroll;
     overflow-x: hidden;
+    gap: 30px;
 }
 
 
@@ -103,14 +104,16 @@
 }
 
 .chekout-content-2 {
-    height: 100%;
+    overflow: hidden;
+    margin: 0  auto;
+    flex-grow: 1;
+    height: max-content;
     background-color: #fff;
     display: flex;
     /* border-radius: 20px; */
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40%;
 }
 
 /* checkout css */

@@ -21,17 +21,17 @@ const Card = ({ p, link }) => {
         }
     };
     return (
-        <li className="flex py-6 px-2 bg-white shadow-xl">
-            <div className="h-36 w-40 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+        <li className="flex w-[330px] py-6  bg-white shadow-xl">
+            <div className="h-24  flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                 <img src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`} alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." className="h-full w-full object-cover object-center" />
             </div>
-            <div className="ml-8 flex flex-1 flex-col">
+            <div className="ml- flex flex-1 flex-col">
                 <div>
-                    <div className="flex justify-between text-base font-medium text-gray-900">
+                    <div className="flex justify-start text-base font-medium text-gray-900">
                         <h3>
                             <a href="#">{p?.name}</a>
                         </h3>
-                        <p className="ml-4">${p?.price}</p>
+                        <p className="">${p?.price}</p>
                     </div>
                 </div>
                 <div className="flex flex-1 items-end justify-between text-sm">

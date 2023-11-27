@@ -15,7 +15,6 @@ export default function AdminRoute() {
             if (res.data.ok) {
                 setOk(true);
             } else {
-
                 setOk(false);
             }
         };

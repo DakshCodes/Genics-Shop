@@ -91,7 +91,7 @@ const CreateCategoriy = () => {
 
 
   return (
-    <div className='w-full flex flex-wrap'>
+    <div className='w-full flex-col md:flex-row justify-center  flex '>
       <CatgeoryForm
         btn="Create"
         title="Create"
@@ -99,7 +99,7 @@ const CreateCategoriy = () => {
         value={name}
         setValue={setName}
       />
-      <div className="border w-[50%] py-[3rem] bg-gray-100  mx-auto">
+      <div className="border flex-grow  bg-gray-100  mx-auto">
         <div className="flex flex-col">
           <div className="overflow-x-auto shadow-md sm:rounded-lg">
             <div className="inline-block min-w-full align-middle">
