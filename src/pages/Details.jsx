@@ -25,7 +25,7 @@ const Details = () => {
     const getSingleProduct = async () => {
         try {
             const { data } = await axios.get(
-                `http://localhost:8080/api/v1/product/get-product/${params.slug}`
+                `${import.meta.env.VITE_SERVER}/api/v1/product/get-product/${params.slug}`
             );
 
             setdetail(data.product);

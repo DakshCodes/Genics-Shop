@@ -15,7 +15,7 @@ const CreateCategoriy = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("http://localhost:8080/api/v1/category/create-category", {
+      const { data } = await axios.post(`${import.meta.env.VITE_SERVER}/api/v1/category/create-category`, {
         name,
       });
       if (data?.success) {
@@ -34,7 +34,7 @@ const CreateCategoriy = () => {
   //get all cat
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get("http://localhost:8080/api/v1/category/get-category");
+      const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/category/get-category`);
       if (data?.success) {
         setCategories(data?.category);
       }
@@ -53,7 +53,7 @@ const CreateCategoriy = () => {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        `http://localhost:8080/api/v1/category/update-category/${selected._id}`,
+        `${import.meta.env.VITE_SERVER}/api/v1/category/update-category/${selected._id}`,
         { name: updatedName }
       );
       if (data?.success) {
@@ -73,7 +73,7 @@ const CreateCategoriy = () => {
   const handleDelete = async (pId) => {
     try {
       const { data } = await axios.delete(
-        `http://localhost:8080/api/v1/category/delete-category/${pId}`
+        `${import.meta.env.VITE_SERVER}/api/v1/category/delete-category/${pId}`
       );
       if (data.success) {
         toast.success(`category is deleted`);
@@ -91,15 +91,16 @@ const CreateCategoriy = () => {
 
 
   return (
-    <div className='w-full flex-col md:flex-row justify-center  flex '>
+    <div className='w-full bg-[#fff] h-full  justify-center flex flex-wrap'>
       <CatgeoryForm
         btn="Create"
         title="Create"
         handleSubmit={handleSubmit}
         value={name}
         setValue={setName}
+        className="flex-grow "
       />
-      <div className="border flex-grow  bg-gray-100  mx-auto">
+      <div className="border w-[20rem] flex-grow ">
         <div className="flex flex-col">
           <div className="overflow-x-auto shadow-md sm:rounded-lg">
             <div className="inline-block min-w-full align-middle">

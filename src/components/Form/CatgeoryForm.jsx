@@ -2,8 +2,8 @@ import React from 'react'
 
 const CatgeoryForm = ({ handleSubmit,btn, value,title, setValue }) => {
     return (
-        <div className='w-[50%]'>
-            <div className="h-full  bg-gray-100  flex flex-col justify-start sm:py-12">
+        <div className='w-[max-content] flex-grow m-auto'>
+            <div className="h-full  bg-[#fff] flex flex-col justify-start sm:py-12">
                 <div className="relative  sm:max-w-xl sm:mx-auto">
                     <div className="relative  bg-white mx-8 md:mx-0 shadow rounded-3xl sm:p-10">
                         <div className="max-w-md mx-auto">

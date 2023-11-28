@@ -15,7 +15,7 @@ const ForgotPassword = () => {
     e.preventDefault();
     console.log("Click forgget")
     try {
-      const res = await axios.post(`http://localhost:8080/api/v1/auth/forgot-password`, {
+      const res = await axios.post(`${import.meta.env.VITE_SERVER}/api/v1/auth/forgot-password`, {
         email,
         newPassword,
       });

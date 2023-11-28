@@ -173,6 +173,7 @@
     border-top-left-radius: 1000px;
     border-top-right-radius: 1000px;
     background: rgb(255, 255, 255);
+    overflow: hidden;
     background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(152, 172, 209, 1) 26%, rgba(155, 156, 158, 1) 100%);
 }
 
@@ -185,7 +186,7 @@
 #content #center img {
     height: 100%;
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
     z-index: 99;
     /* animation: updown 700ms infinite alternate-reverse ease-in; */
 }

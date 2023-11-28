@@ -89,7 +89,7 @@ const Products = () => {
     //getall products
     const getAllProducts = async () => {
         try {
-            const { data } = await axios.get(`http://localhost:8080/api/v1/product/product-list/${page}`);
+            const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/product/product-list/${page}`);
             setProducts(data.products);
         } catch (error) {
             console.log(error);
@@ -100,7 +100,7 @@ const Products = () => {
     //getTOtal COunt
     const getTotal = async () => {
         try {
-            const { data } = await axios.get("http://localhost:8080/api/v1/product/product-count");
+            const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/product/product-count`);
             setTotal(data?.total);
         } catch (error) {
             console.log(error);
@@ -114,7 +114,7 @@ const Products = () => {
     //load more
     const loadMore = async () => {
         try {
-            const { data } = await axios.get(`http://localhost:8080/api/v1/product/product-list/${page}`);
+            const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/product/product-list/${page}`);
             setProducts([...products, ...data?.products]);
         } catch (error) {
             console.log(error);
@@ -129,7 +129,7 @@ const Products = () => {
 
     const FilterProduct = async (c) => {
         try {
-            const { data } = await axios.post("http://localhost:8080/api/v1/product/product-filters", {
+            const { data } = await axios.post(`${import.meta.env.VITE_SERVER}/api/v1/product/product-filters`, {
                 checked
             });
             setProducts(data?.products);
@@ -189,20 +189,25 @@ const Products = () => {
                     </>
                     ))}
                 </div>
-                <div className="btn-load flex justify-center items-center p-6">
-                    <button
-                        onClick={(e) => {
-                            e.preventDefault();
-                            setPage(page + 1);
-                        }}
-                        className="cursor-pointer transition-all 
-bg-gray-700 text-white px-6 py-2 rounded-lg
-border-green-400
-border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px]
-active:border-b-[2px] active:brightness-90 active:translate-y-[2px] hover:shadow-xl hover:shadow-green-300 shadow-green-300 active:shadow-none uppercase">
-                        Load More
-                    </button>
-                </div>
+
+                {
+                    products > 0 && (
+                        <div className="btn-load flex justify-center items-center p-6">
+                            <button
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    setPage(page + 1);
+                                }}
+                                className="cursor-pointer transition-all 
+    bg-gray-700 text-white px-6 py-2 rounded-lg
+    border-green-400
+    border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px]
+    active:border-b-[2px] active:brightness-90 active:translate-y-[2px] hover:shadow-xl hover:shadow-green-300 shadow-green-300 active:shadow-none uppercase">
+                                Load More
+                            </button>
+                        </div>
+                    )
+                }
             </div>
         </div>
     )

@@ -17,7 +17,7 @@ const Productcard = ({ p, link }) => {
             >
                 <div class="card">
                     <Link to={`${link}`}>
-                        <div class="card-img"><div class="img"><img src={`http://localhost:8080/api/v1/product/product-photo/${p._id}`} alt="" /></div></div>
+                        <div class="card-img"><div class="img"><img src={`${import.meta.env.VITE_SERVER}/api/v1/product/product-photo/${p._id}`} alt="" /></div></div>
                     </Link>
                     <div class="card-title">{p?.name}</div>
                     <div class="card-subtitle">{p?.description}</div>

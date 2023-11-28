@@ -24,7 +24,7 @@ const Navbar = () => {
         e.preventDefault();
         try {
             const { data } = await axios.get(
-                `http://localhost:8080/api/v1/product/search/${values.keyword}`
+                `${import.meta.env.VITE_SERVER}/api/v1/product/search/${values.keyword}`
             );
             setValues({ ...values, results: data });
             navigate("/search");
@@ -111,31 +111,14 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="icons-nav">
-                        {
-                            auth?.user?.role === 1 && (
-                                <button class="tooltip">
-                                    <Link
-                                        to={`/dashboard/${auth?.user?.role === 1 ? "admin" : "user"
-                                            }`} >
-                                        <i id='icon' class="ri-user-3-line"></i>
-                                        <span>DashBoard</span>
-                                    </Link>
-                                </button>
-                            )
-
-                        }
-                        {
-                            auth?.user?.role === 0 && (
-                                <button class="tooltip" onClick={handleseller}>
-                                    <Link>
-                                        <i id='icon' class="ri-user-3-line"></i>
-                                        <span>Seller</span>
-                                    </Link>
-                                </button>
-                            )
-
-                        }
-
+                        <button class="tooltip">
+                            <Link
+                                to={`/dashboard/${auth?.user?.role === 1 ? "admin" : "user"
+                                    }`} >
+                                <i id='icon' class="ri-user-3-line"></i>
+                                <span>DashBoard</span>
+                            </Link>
+                        </button>
                         <button class="tooltip relative">
                             <Link to={'/checkout'}>
                                 <i id='cart' class="ri-shopping-bag-line"></i>

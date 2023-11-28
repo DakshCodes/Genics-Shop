@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { Select } from "antd";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/auth";
 const { Option } = Select;
 
 const CreateProduct = () => {
@@ -15,11 +16,12 @@ const CreateProduct = () => {
   const [quantity, setQuantity] = useState("");
   const [shipping, setShipping] = useState("");
   const [photo, setPhoto] = useState("");
+  const [auth, setAuth] = useAuth();
 
   //get all category
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get("http://localhost:8080/api/v1/category/get-category");
+      const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/category/get-category`);
       if (data?.success) {
         setCategories(data?.category);
       }
@@ -44,8 +46,9 @@ const CreateProduct = () => {
       productData.append("quantity", quantity);
       productData.append("photo", photo);
       productData.append("category", category);
+      productData.append("userid", auth?.user?._id);
       const { data } = axios.post(
-        "http://localhost:8080/api/v1/product/create-product",
+        `${import.meta.env.VITE_SERVER}/api/v1/product/create-product`,
         productData
       );
       if (data?.success) {
@@ -62,20 +65,20 @@ const CreateProduct = () => {
 
 
   return (<>
-    <div className='w-[70rem] h-[55rem] '>
-      <div className=" w-full h-full  bg-gray-100  flex flex-col justify-start sm:py-2">
+    <div className='w-full h-full m-auto '>
+      <div className="bg-[#fff]  flex flex-col justify-start sm:py-2">
         <div className="relative w-full h-full overflow-y-auto  sm:max-w-xl sm:mx-auto">
-          <div className="relative  bg-white  mx-8 md:mx-0 shadow rounded-3xl sm:p-10">
+          <div className="relative  bg-white  mx-8 py-10 md:mx-0 shadow rounded-3xl sm:p-10">
             <div className="max-w-md mx-auto">
               <div className="flex items-center space-x-5">
-                <div className="h-14 w-14 bg-yellow-200 rounded-full flex flex-shrink-0 justify-center items-center text-yellow-500 text-2xl font-mono">i</div>
-                <div className="block pl-2 font-semibold text-xl self-start text-gray-700">
-                  <h2 className="leading-relaxed">Create Product</h2>
+                  <div className="h-14 w-14 bg-yellow-200 rounded-full flex flex-shrink-0 justify-center items-center text-yellow-500 text-2xl font-mono">i</div>
+                  <div className="block pl-2 font-semibold text-xl self-start text-gray-700">
+                    <h2 className="leading-relaxed">Create Product</h2>
+                  </div>
                 </div>
-              </div>
-              <div className="divide-y divide-gray-200">
-                <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
-                  <div className="flex flex-col">
+                <div className="divide-y divide-gray-200">
+                  <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+                    <div className="flex flex-col">
                     <Select
                       bordered={false}
                       placeholder="Select a category"

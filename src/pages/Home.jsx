@@ -19,6 +19,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
 
+
     return (<>
 
 
@@ -83,7 +84,7 @@ const Home = () => {
                             {/*
                   - PRODUCT GRID
     */}
-                         
+
                         </div>
                     </div>
                 </div>
@@ -104,7 +105,7 @@ const Home = () => {
                                     <p className="testimonial-title">CEO &amp; Founder Invision</p>
                                     <img src={logo} alt="quotation" className="quotation-img" width={120} />
                                     <p className="testimonial-desc">
-                                       Great It Is For Project Purpose
+                                        Great It Is For Project Purpose
                                     </p>
                                 </div>
                             </div>
