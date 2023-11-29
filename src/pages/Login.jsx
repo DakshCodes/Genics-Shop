@@ -6,19 +6,17 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/auth'
 import toast from 'react-hot-toast'
 import axios from 'axios'
+import { useLoading } from '../context/Loading'
 
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [auth, setAuth] = useAuth();
+    const [loading, setLoading] = useLoading()
 
     const navigate = useNavigate();
     const location = useLocation();
-
-    if (auth.user) {
-        navigate('/')
-    }
 
     // form function
     const handlelogin = async (e) => {
@@ -45,6 +43,15 @@ const Login = () => {
             toast.error("Something went wrong");
         }
     };
+
+    useEffect(() => {
+        setLoading(true)
+        if (auth?.token) {
+            navigate('/')
+        }
+        setLoading(false)
+    })
+
     return (
         <>
             <div className="register-main">

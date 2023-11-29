@@ -4,6 +4,7 @@ import axios from "axios";
 import { Select } from "antd";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/auth";
+import { useLoading } from "../../context/Loading";
 const { Option } = Select;
 
 const CreateProduct = () => {
@@ -17,10 +18,12 @@ const CreateProduct = () => {
   const [shipping, setShipping] = useState("");
   const [photo, setPhoto] = useState("");
   const [auth, setAuth] = useAuth();
+  const [loading, setLoading] = useLoading();
 
   //get all category
   const getAllCategory = async () => {
     try {
+
       const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/category/get-category`);
       if (data?.success) {
         setCategories(data?.category);
@@ -47,19 +50,24 @@ const CreateProduct = () => {
       productData.append("photo", photo);
       productData.append("category", category);
       productData.append("userid", auth?.user?._id);
-      const { data } = axios.post(
+
+      setLoading(true)
+      const res = await axios.post(
         `${import.meta.env.VITE_SERVER}/api/v1/product/create-product`,
         productData
       );
-      if (data?.success) {
-        toast.error(data?.message);
-      } else {
+      console.log(res.data)
+      if (res.data?.success) {
         toast.success("Product Created Successfully");
-        navigate("/dashboard/admin/products");
+        navigate('/')
+      } else {
+        toast.error(data?.message);
       }
+      setLoading(false)
     } catch (error) {
       console.log(error);
       toast.error("something went wrong");
+      setLoading(false)
     }
   };
 
@@ -71,14 +79,14 @@ const CreateProduct = () => {
           <div className="relative  bg-white  mx-8 py-10 md:mx-0 shadow rounded-3xl sm:p-10">
             <div className="max-w-md mx-auto">
               <div className="flex items-center space-x-5">
-                  <div className="h-14 w-14 bg-yellow-200 rounded-full flex flex-shrink-0 justify-center items-center text-yellow-500 text-2xl font-mono">i</div>
-                  <div className="block pl-2 font-semibold text-xl self-start text-gray-700">
-                    <h2 className="leading-relaxed">Create Product</h2>
-                  </div>
+                <div className="h-14 w-14 bg-yellow-200 rounded-full flex flex-shrink-0 justify-center items-center text-yellow-500 text-2xl font-mono">i</div>
+                <div className="block pl-2 font-semibold text-xl self-start text-gray-700">
+                  <h2 className="leading-relaxed">Create Product</h2>
                 </div>
-                <div className="divide-y divide-gray-200">
-                  <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
-                    <div className="flex flex-col">
+              </div>
+              <div className="divide-y divide-gray-200">
+                <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+                  <div className="flex flex-col">
                     <Select
                       bordered={false}
                       placeholder="Select a category"

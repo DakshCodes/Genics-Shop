@@ -5,11 +5,13 @@ import video from '../assets/video2.mp4'
 import { motion } from 'framer-motion'
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import { useCart } from '../context/cart'
 
 const Details = () => {
     const params = useParams();
     const [detail, setdetail] = useState([]);
     const [relatedProducts, setRelatedProducts] = useState([]);
+    const [cart, setCart] = useCart();
     //get similar product
     const getSimilarProduct = async (pid, cid) => {
         try {
@@ -50,7 +52,17 @@ const Details = () => {
                             <h1>{detail?.name}</h1>
                             <h2>€{detail?.price}</h2>
                             <p>{detail?.description}</p>
-                            <button><i class="ri-shopping-bag-3-line"></i>Add Cart</button>
+                            <button><i class="ri-shopping-bag-3-line"
+                                onClick={
+                                    () => {
+                                        setCart([...cart, detail]);
+                                        localStorage.setItem(
+                                            "cart",
+                                            JSON.stringify([...cart, detail])
+                                        );
+                                        toast.success("Added In Cart");
+                                    }}
+                            ></i>Add Cart</button>
                         </div>
                         <div id="center">
                             <div id="center-bg">

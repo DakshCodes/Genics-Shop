@@ -18,7 +18,14 @@ export default function AdminRoute() {
                 setOk(false);
             }
         };
-        if (auth?.token) authCheck();
+
+        if (auth?.token) {
+            authCheck();
+        }
+        else {
+            toast.error("Please Login First")
+            navigate('/login')
+        }
     }, [auth?.token]);
 
     return ok ? <Outlet /> : <Spinner />;

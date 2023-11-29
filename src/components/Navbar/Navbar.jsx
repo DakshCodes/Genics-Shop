@@ -56,6 +56,7 @@ const Navbar = () => {
         });
         localStorage.removeItem("auth");
         toast.success("Logout Successfully");
+        navigate('/login')
     }
     const handleseller = () => {
         toast.success("After Admin Approval You Can Sell");

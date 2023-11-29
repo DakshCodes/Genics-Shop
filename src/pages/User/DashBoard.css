@@ -13,7 +13,7 @@
     padding: 1.3rem 4vw;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 3rem;
 }
 
 .app-header {
@@ -63,7 +63,7 @@
 .app-body {
     height: max-content;
     width: max-content;
-    margin: 3rem auto;
+    margin: 1rem auto;
 }
 
 /* @media (max-width: 1200px) {

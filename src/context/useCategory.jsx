@@ -7,7 +7,7 @@ export default function useCategory() {
     //get cat
     const getCategories = async () => {
         try {
-            const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/auth/profile/api/v1/category/get-category`);
+            const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/api/v1/category/get-category`);
             setCategories(data?.category);
         } catch (error) {
             console.log(error);

@@ -1,21 +1,20 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Register.css'
 import { Link, useNavigate } from 'react-router-dom'
 import toast from "react-hot-toast";
 import axios from 'axios'
 import { useAuth } from '../context/auth'
+import { useLoading } from '../context/Loading';
 
 const Register = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [auth, setAuth] = useAuth();
+    const [loading, setLoading] = useLoading()
 
     const navigate = useNavigate();
 
-    if (auth.user) {
-        navigate('/')
-    }
 
     const handleregister = async (e) => {
         e.preventDefault();
@@ -37,6 +36,16 @@ const Register = () => {
             toast.error("Something went wrong");
         }
     }
+
+    useEffect(() => {
+        setLoading(true)
+        if (auth?.token) {
+            navigate('/')
+            toast.success("Already Login")
+        }
+        setLoading(false)
+    })
+
     return (
         <>
             <div className="register-main">

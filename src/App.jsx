@@ -22,12 +22,20 @@ import AllProducts from './pages/Admin/AllProducts'
 import UpdateProduct from './pages/Admin/UpdateProduct'
 import Search from './pages/Search/Search'
 import AdminProfile from './pages/Admin/AdminProfile'
+import { useLoading } from './context/Loading'
+import Spinner from './components/Spinner'
+import Orders from './pages/User/Orders'
 
 
 
 function App() {
+  const [loading, setLoading] = useLoading()
+
   return (
     <>
+      {
+        loading && <Spinner />
+      }
       <Navbar />
       <Routes>
         <Route exact path='/' element={<Home />} />
@@ -38,11 +46,13 @@ function App() {
           <Route exact path='/allproducts' element={<Products />} />
         </Route>
         {/* user*/}
-        <Route  path='/dashboard' element={<Private />} >
-          <Route  path='user' element={<DashBoard />} >
+        <Route path='/dashboard' element={<Private />} >
+          <Route path='user' element={<DashBoard />} >
             <Route exact path='create-product' element={<CreateProduct />} />
+            <Route path='profile' element={<AdminProfile />} />
             <Route exact path='products' element={<AllProducts />} />
-            <Route exact path='product/:slug' element={<UpdateProduct />} />
+            <Route exact path='products/:slug' element={<UpdateProduct />} />
+            <Route exact path='orders' element={<Orders />} />
           </Route>
         </Route>
         {/* admin */}
@@ -53,11 +63,10 @@ function App() {
             <Route path='create-category' element={<CreateCategoriy />} />
             <Route exact path='products' element={<AllProducts />} />
             <Route exact path='create-product' element={<CreateProduct />} />
-            <Route exact path='product/:slug' element={<UpdateProduct />} />
+            <Route exact path='products/:slug' element={<UpdateProduct />} />
             <Route exact path='users' element={<User />} />
           </Route>
         </Route>
-
         <Route exact path='/register' element={<Register />} />
         <Route exact path='/login' element={<Login />} />
         <Route exact path='/forgot-password' element={<ForgotPassword />} />
